@@ -7,4 +7,3 @@ if(!$con){
 } else {
 	// echo '<h1>Connected successfully!</h1>';
 }
-

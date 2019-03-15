@@ -31,12 +31,21 @@
   </form>
  -->
   <div class="navigation">
+   <?php
+  session_start();
+   if (empty($_SESSION['username'])) {?>
     <div class="button_login">
-      <a href="login.php">Login</a>
+      <a href="login_page.php">Login</a>
     </div>
-    <div class="button_register">
+      <div class="button_register">
       <a href="registration.php">Register</a>
     </div>
+    <?php }else{ ?>
+      <div class="button_logout">
+      <a href="logout_page.php">Logout</a>
+    </div>
+   <?php };
+    ?>
   </div>
 </body>
 </html>
