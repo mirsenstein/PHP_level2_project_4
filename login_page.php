@@ -25,8 +25,9 @@ if (isset($_POST['submit'])) {
         $_SESSION['username'] = $username;
         $_SESSION['password'] = $password;
         $_SESSION['names'] = $row['names'];
+        $_SESSION['user_id'] = $row['user_id'];
 
-        echo '<a href="index.php">home</a>';
+        header('Location: index.php');
         }else {
             echo "Login unsuccesfull! Try again? ";
             echo '<a href="login_page.php">Login</a>';
