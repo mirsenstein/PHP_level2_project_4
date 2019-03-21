@@ -9,25 +9,29 @@ date_default_timezone_set ('Europe/Sofia');
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" type="text/css" href="styles/style.css">
   <link rel="stylesheet" href="styles/bootstrap.min.css">
+  <link href='https://fonts.googleapis.com/css?family=Dancing Script' rel='stylesheet'>
 </head>
 
 <body>
-
-  <div class="navigation">
-   <?php
-  session_start();
-   if (empty($_SESSION['username'])) {?>
-    <div class="button_login">
-      <a href="login_page.php">Login</a>
+  <nav class="navbar navbar-primary">
+    <div class="container-fluid">
+      <div class="nav navbar-nav">
+        <a href="index.php"><img class="logo" src="img/bf_logo.png"/></a>
+      </div>
+      <div>
+        <ul class="nav navbar-nav">
+          <?php
+          session_start();
+          if (empty($_SESSION['username'])) {?>
+            <li class="active"><a href="login_page.php">Login <span class="sr-only">(current)</span></a></li>
+            <li class="active"><a href="registration.php">Register</a></li>
+          <?php }else{ ?>
+            <li class="fa fa-user userblock"><?php echo $_SESSION['username'];?></li>
+            <li class="active"><a href="logout_page.php">Logout</a></li>
+          <?php };
+          ?>
+        </ul>
+      </div>
+      <img class="afterlogo" src="img/afterlogo.png"/>
     </div>
-      <div class="button_register">
-      <a href="registration.php">Register</a>
-    </div>
-    <?php }else{ ?>
-      <div class="button_logout">
-      <a href="logout_page.php">Logout</a>
-    </div>
-
-   <?php };
-    ?>
-  </div>
+  </nav>

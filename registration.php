@@ -21,27 +21,43 @@ if (isset($_POST['submit'])){
         }
 }else{ ?>
 
-<!DOCTYPE html>
-<html>
-<head>
-    <meta charset="utf-8">
-    <title>Registration</title>
-    <link rel="stylesheet" href="styles/style.css" />
-</head>
-
-<body>
-
-    <div class="form">
-    <h1>Registration</h1>
-        <form name="registration" action="" method="post">
-            <input type="text" name="username" placeholder="Username" required />
-            <input type="password" name="password" placeholder="Password" required />
-            <input type="text" name="names" placeholder="Names" required />
-            <input type="submit" name="submit" value="Register" />
-        </form>
-    </div>
-<?php
-}
-?>
-</body>
-</html>
+    <!DOCTYPE html>
+    <html>
+        <head>
+            <meta charset="utf-8">
+            <title>Registration</title>
+            <link rel="stylesheet" href="styles/style.css" />
+            <link rel="stylesheet" type="text/css" href="styles/style1.css" />
+            <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+            <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+            <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+        </head>
+        <body>
+            <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+            <div class="main">
+                <div class="container">
+                    <center>
+                        <div class="middle">
+                            <div id="login">
+                                <fieldset class="clearfix">
+                                    <h1 class="form-signin-heading text-muted colorsignin">Registration</h1>
+                                    <form name="registration" action="" method="post">
+                                        <p><span class="fa fa-user"></span><input type="text" name="username" placeholder="Username" required /></p>
+                                        <p><span class="fa fa-lock"></span><input type="password" name="password" placeholder="Password" required /></p>
+                                        <p><span class="fa fa-child"></span><input type="text" name="names" placeholder="Names" required /></p>
+                                        <span><input type="submit" name="submit" value="Sign up" /></span>
+                                    </form>
+                                </fieldset>
+                            </div>
+                            <div><img class="basic_facebook" src="img/basic_facebook1.png" alt="Basic Facebook"/>
+                                <div class="clearfix"></div>
+                            </div>
+                        </div>
+                    </center>
+                </div>
+            </div>
+        <?php
+        }
+        ?>
+    </body>
+    </html>
