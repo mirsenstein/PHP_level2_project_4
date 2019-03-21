@@ -23,22 +23,18 @@ if (!empty($_SESSION['username'])) {
 	</div>
 	<?php 
 	if(isset($_POST['submit'])){
-			$post_text 	= $_POST['post_text'];
+			$post_text 	= mysqli_real_escape_string($con, $_POST['post_text']);
 			
-			//to do add hidden field product id
 			$post_update_query = "UPDATE `posts` SET `post_text`='$post_text' WHERE `post_id`=$post_id";
 
 			$result_update = mysqli_query($con, $post_update_query);
 			if($result_update){
-			// echo "Success!";
 				header('Location: index.php');
 			} else {
 				echo mysqli_error($con);
-			// echo "Please, try again later!";
+				echo "Please, try again later!";
 			}
 		}
 }
 
-
-
-				
+include 'includes/footer.php';

@@ -1,5 +1,4 @@
 <?php include 'includes/header.php';
-// session_start();
 
 if (!empty($_SESSION['username'])) {
 	$user_id = $_SESSION['user_id'];

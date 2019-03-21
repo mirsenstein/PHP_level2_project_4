@@ -1,5 +1,4 @@
 <?php include 'includes/header.php';
-// session_start();
 
 if (!empty($_SESSION['username'])) {
 
@@ -39,8 +38,8 @@ if (!empty($_SESSION['username'])) {
 
 	<?php
 	if(isset($_POST['submit'])){
-		$post_comment = 	$_POST['post_comment'];
-		$user_id 	= $_SESSION['user_id'];
+		$post_comment = mysqli_real_escape_string($con, $_POST['post_comment']);
+		$user_id 	  = $_SESSION['user_id'];
 
 		$comment_q = "INSERT INTO comments(post_id, user_id, comment) VALUES ('$post_id', '$user_id', '$post_comment')";
 
@@ -57,3 +56,4 @@ if (!empty($_SESSION['username'])) {
 }else{
 	echo "You have to login to comment!";
 };
+include 'includes/footer.php';

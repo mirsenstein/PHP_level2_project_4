@@ -2,12 +2,17 @@
 // require('db.php');
 // If form submitted, insert values into the database.
 if (isset($_POST['submit'])){
-        
- $username = $_POST['username'];
- $password = $_POST['password'];
- $names =    $_POST['names'];
+ 
+    $username = mysqli_real_escape_string($con, $_POST['username']);
+    $password = mysqli_real_escape_string($con, $_POST['password']);
+    $names    = mysqli_real_escape_string($con, $_POST['names']);
+    $username = stripcslashes($username);
+    $password = stripcslashes($password);
+    $names    = stripcslashes($names);
+    $password = password_hash($password, PASSWORD_DEFAULT);       
+
     
-    $query = "INSERT into `users` (username, password, names)  VALUES ('$username', '".md5($password)."', '$names')";
+    $query = "INSERT into `users` (username, password, names)  VALUES ('$username', '". $password ."', '$names')";
         $result = mysqli_query($con,$query);
         if($result){
             echo "<div class='form'>

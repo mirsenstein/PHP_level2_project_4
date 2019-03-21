@@ -3,23 +3,19 @@
 if (isset($_POST['submit'])) {
     
 
-    $username = $_POST['username'];
-    $password = $_POST['password'];
-    $password = md5($password);
-
-    // $username = stripcslashes($username);
-    // $password = stripcslashes($password);
-    // $username = mysqli_real_escape_string($username);
-    // $password = mysqli_real_escape_string($password);
+    $username = mysqli_real_escape_string($con, $_POST['username']);
+    $password = mysqli_real_escape_string($con, $_POST['password']);
+    $username = stripcslashes($username);
+    $password = stripcslashes($password);
+    // $password = password_hash($password, PASSWORD_DEFAULT);
 
     $login_query = "SELECT * FROM users WHERE username='$username'";
 
     $result = mysqli_query($con, $login_query);
 
     $row = mysqli_fetch_array($result);
-    // var_dump($row);
 
-    if ($row['username'] == $username && $row['password'] == $password) {
+    if ($row['username'] == $username && password_verify($password, $row['password'])) {
         echo "Welcome, " . $row['names'];
         session_start();
         $_SESSION['username'] = $username;
@@ -39,7 +35,9 @@ if (isset($_POST['submit'])) {
         <head>
             <meta charset="utf-8">
             <title>Login</title>
-            <link rel="stylesheet" href="styles/style.css" />
+            <link rel="stylesheet" href="styles/bootstrap.min.css">
+            <link rel="stylesheet" type="text/css" href="styles/style.css" />
+
         </head>
 
         <body>
@@ -52,6 +50,10 @@ if (isset($_POST['submit'])) {
                     <input type="submit" name="submit" value="Login" />
                 </form>
             </div>
+            <div>
+                <a href="registration.php">Register</a>
+            </div>
+
         </body>
         </html>
 <?php 

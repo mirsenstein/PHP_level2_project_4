@@ -1,11 +1,13 @@
-<?php include 'includes/db.php'; ?>
+<?php include 'includes/db.php'; 
+date_default_timezone_set ('Europe/Sofia');
+?>
 
 <!DOCTYPE html>
 <html>
 <head>
   <title>Basic Facebook</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <!-- <link rel="stylesheet" href="styles/style.css"> -->
+  <link rel="stylesheet" type="text/css" href="styles/style.css">
   <link rel="stylesheet" href="styles/bootstrap.min.css">
 </head>
 
@@ -29,5 +31,3 @@
    <?php };
     ?>
   </div>
-</body>
-</html>

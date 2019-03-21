@@ -10,5 +10,6 @@ if($result){
 	header('Location: index.php');
 } else {
 	echo mysqli_error($con);
+	echo "Please, try again later!";
 }
 include 'includes/footer.php';

@@ -7,7 +7,7 @@ if (!empty($_SESSION['username'])) {
 };
 
 
-$read_query = "SELECT p.post_id,p.user_id, p.post_text, p.image, u.names, p.date_time, p.likes_num FROM `posts` AS p JOIN users as u ON u.user_id=p.user_id WHERE 1";
+$read_query = "SELECT p.post_id,p.user_id, p.post_text, p.image, u.names, p.date_time, p.likes_num FROM `posts` AS p JOIN users as u ON u.user_id=p.user_id WHERE 1 ORDER BY p.post_id DESC";
 $post_result = mysqli_query($con, $read_query);
 
 ?>
@@ -38,7 +38,7 @@ $post_result = mysqli_query($con, $read_query);
 		                &nbsp;
 		                <span class='label label-info' id="upload-file-info"></span>
 		              </div>
-		            </div>            
+		            </div>
 		            <div class="col-lg-12 text-center">               
 		              <input class="btn btn-primary btn-xl text-uppercase" name="submit" type="submit" value="Post">
 		            </div>
@@ -103,4 +103,3 @@ $post_result = mysqli_query($con, $read_query);
 
 
 <?php include 'includes/footer.php'; ?>
-
