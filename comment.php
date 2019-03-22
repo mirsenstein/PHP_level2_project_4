@@ -43,21 +43,25 @@ if (!empty($_SESSION['username'])) {
 
 		<?php
 		if(isset($_POST['submit'])){
-			$post_comment = mysqli_real_escape_string($con, $_POST['post_comment']);
-			$user_id 	  = $_SESSION['user_id'];
+			if((strlen($_POST['post_text'])!=0){
+				$post_comment = mysqli_real_escape_string($con, $_POST['post_comment']);
+				$user_id 	  = $_SESSION['user_id'];
 
-			$comment_q = "INSERT INTO comments(post_id, user_id, comment) VALUES ('$post_id', '$user_id', '$post_comment')";
+				$comment_q = "INSERT INTO comments(post_id, user_id, comment) VALUES ('$post_id', '$user_id', '$post_comment')";
 
-			$result = mysqli_query($con, $comment_q);
+				$result = mysqli_query($con, $comment_q);
 
-			if($result){
-				header('Location: index.php');
+				if($result){
+					header('Location: index.php');
+				} else {
+					echo mysqli_error($con);
+				}
 			} else {
-				echo mysqli_error($con);
+				header("location:errors.php?msg=empty_post");
 			}
 		} else {
 				
-		}?>
+		} ?>
 	</div>	
 <?php }else{
 	echo "You have to login to comment!";

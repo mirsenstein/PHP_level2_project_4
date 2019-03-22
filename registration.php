@@ -2,23 +2,26 @@
 // require('db.php');
 // If form submitted, insert values into the database.
 if (isset($_POST['submit'])){
- 
-    $username = mysqli_real_escape_string($con, $_POST['username']);
-    $password = mysqli_real_escape_string($con, $_POST['password']);
-    $names    = mysqli_real_escape_string($con, $_POST['names']);
-    $username = stripcslashes($username);
-    $password = stripcslashes($password);
-    $names    = stripcslashes($names);
-    $password = password_hash($password, PASSWORD_DEFAULT);       
+    if((strlen($_POST['username'])!=0)&&(strlen($_POST['password'])!=0)&&(strlen($_POST['names'])!=0)){
+        $username = mysqli_real_escape_string($con, $_POST['username']);
+        $password = mysqli_real_escape_string($con, $_POST['password']);
+        $names    = mysqli_real_escape_string($con, $_POST['names']);
+        $username = stripcslashes($username);
+        $password = stripcslashes($password);
+        $names    = stripcslashes($names);
+        $password = password_hash($password, PASSWORD_DEFAULT);       
 
-    
-    $query = "INSERT into `users` (username, password, names)  VALUES ('$username', '". $password ."', '$names')";
-        $result = mysqli_query($con,$query);
-        if($result){
-            echo "<div class='form'>
-                <h3>You are registered successfully.</h3>
-                <br/>Click here to <a href='login_page.php'>Login</a></div>";
-        }
+        
+        $query = "INSERT into `users` (username, password, names)  VALUES ('$username', '". $password ."', '$names')";
+            $result = mysqli_query($con,$query);
+            if($result){
+                echo "<div class='form'>
+                    <h3>You are registered successfully.</h3>
+                    <br/>Click here to <a href='login_page.php'>Login</a></div>";
+            }
+    } else {
+        echo "Fill in all the forms, pls!";
+    }
 }else{ ?>
 
     <!DOCTYPE html>

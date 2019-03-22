@@ -14,34 +14,7 @@ $post_result = mysqli_query($con, $read_query);
 
 <section>
 	<div class="container">
-		<?php if(!empty($_SESSION['username'])){?>
-	    <div class="row">
-			<div class="col-md-auto">
-				<form method="post" enctype="multipart/form-data" action="post_form.php">
-		          	<div class="row">
-		            	<div class="col-md-9">
-		              		<div class="form-group">
-		                		<input class="form-control" name="post_text" type="text" placeholder="Your Text *" >                  
-		              		</div>
-		            	</div>
-		            </div>
-		            <div class="col-md-3">
-		            	<div style="position:relative;">
-		            		<a class='btn btn-primary' href='javascript:;'>
-		                		<input type="file" id="input-file" name="file_to_upload" size="40"  onchange='$("#upload-file-info").html($(this).val());'>
-		                	</a>
-		                	&nbsp;
-		                	<span class='label label-info' id="upload-file-info"></span>
-		            	</div>
-		            </div>
-		            <div class="col-md-2 text-center">               
-		            	<input class="btn btn-primary" name="submit" type="submit" value="Post">
-		            </div>
-		     	</form>
-		    </div>
-		</div>
-		<?php }?>
-    	<div class="row">
+		<div class="row">
      		<?php if(mysqli_num_rows($post_result) > 0){ ?>
       		<?php while($row = mysqli_fetch_assoc($post_result)){ ?>
         	<div class="text-center col-md-9">

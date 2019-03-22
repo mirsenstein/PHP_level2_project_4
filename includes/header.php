@@ -27,6 +27,7 @@ date_default_timezone_set ('Europe/Sofia');
             <li class="active"><a href="registration.php">Register</a></li>
           <?php }else{ ?>
             <li class="fa fa-user userblock"><?php echo $_SESSION['username'];?></li>
+            <li class="active"><a href="post_form.php">Create new post</a></li>
             <li class="active"><a href="logout_page.php">Logout</a></li>
           <?php };
           ?>
