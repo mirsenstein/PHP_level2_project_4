@@ -52,7 +52,7 @@ if (!empty($_SESSION['username'])) {
 					echo mysqli_error($con);
 				}
 			} else {
-				header("location:errors.php?msg=empty_post");
+				header("location:errors.php?msg=empty_comment");
 			}
 		} else {		
 		} ?>

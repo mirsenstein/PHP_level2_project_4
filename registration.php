@@ -21,7 +21,7 @@ if (isset($_POST['submit'])){
                     </div>";
             }
     } else {
-        echo "Fill in all the forms, pls!";
+        header("location:errors.php?msg=empty_registration");
     }
 }else{ ?>
 

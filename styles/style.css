@@ -1,9 +1,3 @@
-body {
-  position: relative;
-  margin: 0;
-  padding-bottom: 6rem;
-}
-
 img {
   width: 40%;
   height: 40%;
@@ -88,13 +82,8 @@ footer {
 	color: #FFF;
 	text-align: center;
 	font-size: 210%;
+	padding: 5px 5px;
 	border: 1px solid #285C89;
-	position: absolute;
-	right: 0;
-	bottom: 0;
-	left: 0;
-	padding: 1rem;
-	text-align: center;
 }
 
 div.top {
@@ -104,5 +93,5 @@ div.top {
 img.imgtop {
 	float: right;
 	width: 5%;
-	margin-bottom: 2%;
+	margin-bottom: 0.6%;
 }
