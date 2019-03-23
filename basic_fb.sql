@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: 22 март 2019 в 01:24
+-- Generation Time: 23 март 2019 в 17:53
 -- Версия на сървъра: 10.1.37-MariaDB
 -- PHP Version: 7.2.12
 
@@ -65,8 +65,11 @@ INSERT INTO `likes` (`like_id`, `post_id`, `user_id`) VALUES
 (15, 25, 9),
 (22, 28, 11),
 (21, 29, 11),
+(24, 30, 11),
+(26, 31, 11),
 (19, 35, 9),
-(20, 35, 11);
+(20, 35, 11),
+(23, 38, 11);
 
 -- --------------------------------------------------------
 
@@ -97,7 +100,8 @@ INSERT INTO `posts` (`post_id`, `user_id`, `post_text`, `image`, `date_time`, `l
 (31, 10, '', NULL, '2019-03-20 21:01:02', 0),
 (32, 10, '', NULL, '2019-03-20 21:06:05', 0),
 (35, 9, 'Unipotato', '10811621_310637979136270_1629766622_n.jpg', '2019-03-21 23:17:14', 0),
-(36, 11, '', 'IMG_5574.JPG', '2019-03-21 23:28:08', 0);
+(36, 11, '', 'IMG_5574.JPG', '2019-03-21 23:28:08', 0),
+(38, 11, 'Hi, Im lonely!', NULL, '2019-03-22 19:42:12', 0);
 
 -- --------------------------------------------------------
 
@@ -119,7 +123,9 @@ CREATE TABLE `users` (
 INSERT INTO `users` (`user_id`, `username`, `password`, `names`) VALUES
 (9, 'user1', '$2y$10$jIvHs/j/tpSKUarEqbtUoOjZwbRwvUTWUiTlksTMw6SPbGQoKzfbm', 'The most creative'),
 (10, '2user', '$2y$10$jKfxClrJ63Rl8.Alr3PwXeNr4KacAd1FGDdGCCtHtBXdM8IHV2htS', 'YEAH!!!!'),
-(11, 'TheLongestName', '$2y$10$hRup7j.CtTmurXSYmaT93.D3zg9ZmkIG2OPgfqUlWD1hXpJI8zLz6', 'NoOne');
+(11, 'TheLongestName', '$2y$10$hRup7j.CtTmurXSYmaT93.D3zg9ZmkIG2OPgfqUlWD1hXpJI8zLz6', 'NoOne'),
+(12, '', '$2y$10$LC3vcZeDAe2Q.R3bDtdEsOB5EeiNYpzzm4nzd81wJd98msV2FZP7y', 'sdfg'),
+(20, 'user23', '$2y$10$vYlWz/sEBi.P.C5Os95C5eauDy/mb578EwV1T.wdfrBRbX0/sNGdm', 'HiHello');
 
 --
 -- Indexes for dumped tables
@@ -166,19 +172,19 @@ ALTER TABLE `comments`
 -- AUTO_INCREMENT for table `likes`
 --
 ALTER TABLE `likes`
-  MODIFY `like_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=23;
+  MODIFY `like_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=27;
 
 --
 -- AUTO_INCREMENT for table `posts`
 --
 ALTER TABLE `posts`
-  MODIFY `post_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=37;
+  MODIFY `post_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=39;
 
 --
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `user_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
+  MODIFY `user_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=27;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
