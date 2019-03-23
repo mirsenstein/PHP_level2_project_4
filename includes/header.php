@@ -13,6 +13,7 @@ date_default_timezone_set ('Europe/Sofia');
 </head>
 
 <body>
+  <a name="top" href=""></a>
   <nav class="navbar navbar-primary">
     <div class="container-fluid">
       <div class="nav navbar-nav">

@@ -9,17 +9,19 @@ if (!empty($_SESSION['username'])) {
 	$post_result = mysqli_query($con, $read_query);
 	?>
 	<div class="row">
-	     <?php if(mysqli_num_rows($post_result) > 0){ ?>
-	      <?php while($row = mysqli_fetch_assoc($post_result)){ ?>
-	      	<?php if($user_id==$row['user_id']){?>	
-	      		<form method="post" enctype="multipart/form-data" action="">
-		        	<input class="form-control" name="post_text" type="text" value="<?= $row['post_text'] ?>" >
-		        	<input class="btn btn-primary btn-xl text-uppercase" name="submit" type="submit" value="Edit">
-		        </form>
-		        <a class="btn btn-danger" href="delete.php?id=<?=$row['post_id']?>">Delete</a>
-		    <?php }?>
-	      <?php } ?>  
-	    <?php } ?>  
+		<div class="text-center">
+		    <?php if(mysqli_num_rows($post_result) > 0){ ?>
+		      	<?php while($row = mysqli_fetch_assoc($post_result)){ ?>
+		      		<?php if($user_id==$row['user_id']){?>	
+		      			<form method="post" enctype="multipart/form-data" action="">
+			        		<input class="form-control" name="post_text" type="text" value="<?= $row['post_text'] ?>" >
+			        		<input class="btn btn-primary btn-xl text-uppercase col-md-2" name="submit" type="submit" value="Edit">
+			        	</form>
+			        	<a class="btn btn-danger col-md-2" href="delete.php?id=<?=$row['post_id']?>">Delete</a>
+			    	<?php }?>
+		      	<?php } ?>  
+		    <?php } ?> 
+		</div> 
 	</div>
 	<?php 
 	if(isset($_POST['submit'])){
@@ -37,4 +39,3 @@ if (!empty($_SESSION['username'])) {
 		}
 }
 
-include 'includes/footer.php';

@@ -2,16 +2,16 @@
 
 if (!empty($_SESSION['username'])) {?>
 	    <div class="row">
-			<div class="col-md-auto">
+			<div class="text-center">
 				<form method="post" enctype="multipart/form-data" action="" id="long_text">
 		          	<div class="row">
-		            	<div class="col-md-6">
+		            	<div class="col-md-8">
 		              		<div class="form-group">
 		                		<textarea class="form-control" form="long_text" name="post_text" placeholder="Your text*"></textarea>                 
 		              		</div>
 		            	</div>
 		            </div>
-		            <div class="col-md-3">
+		            <div class="col-md-5">
 		            	<div style="position:relative;">
 		            		<a class='btn btn-primary' href='javascript:;'>
 		                		<input type="file" id="input-file" name="file_to_upload" size="40"  onchange='$("#upload-file-info").html($(this).val());'>
@@ -26,6 +26,7 @@ if (!empty($_SESSION['username'])) {?>
 		     	</form>
 		    </div>
 		</div>
+
 	<?php if(isset($_POST['submit'])) {
 		if((strlen($_POST['post_text'])!=0)||($_FILES["file_to_upload"]["size"]!=0)){
 			// var_dump($_FILES["file_to_upload"]);
@@ -121,3 +122,4 @@ if (!empty($_SESSION['username'])) {?>
 } else {
 	echo "You have to be loged-in to post!";
 }
+

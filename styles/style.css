@@ -3,6 +3,16 @@ img {
   height: 40%;
 }
 
+.text-center {
+	margin: 0 auto;
+    width: 70%;
+   
+}
+
+.panel-body {
+	height: 35%;
+}
+
 .logo {
 	width: 38%;
 	height: 38%;
@@ -31,7 +41,7 @@ img {
     padding: 15px 15px;
 	color: #FFFFFF;
   	background-color: #337ab7;
-  	text-align: left;
+  
 }
 
 li.active {
@@ -40,4 +50,48 @@ li.active {
 
 .navbar {
 	border: 1px solid #337ab7 !important;
+}
+
+.like_button {
+	height: 16px;
+    width: 16px;
+	margin: 0 5px;
+    overflow: hidden;
+    transform: scale(1.6);
+}
+
+.unlike_button {
+	height: 16px;
+    width: 16px;
+	margin: 0 5px;
+    overflow: hidden;
+    transform: scale(1.6);
+}
+
+.btn {
+	margin: 2px 2px;
+}
+
+.likes {
+	margin: 0 3px;
+}
+
+footer {
+	background-color: #337ab7;
+	font-family: Dancing Script;
+	color: #FFF;
+	text-align: center;
+	font-size: 210%;
+	padding: 5px 5px;
+	border: 1px solid #285C89;
+}
+
+div.top {
+	width: 100%;
+}
+
+img.imgtop {
+	float: right;
+	width: 5%;
+	margin-bottom: 0.6%;
 }

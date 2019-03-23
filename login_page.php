@@ -23,9 +23,11 @@ if (isset($_POST['submit'])) {
         $_SESSION['user_id'] = $row['user_id'];
 
         header('Location: index.php');
-        }else {
-            echo "Login unsuccesfull! Try again? ";
-            echo '<a href="login_page.php">Login</a>';
+
+    } else {
+        echo "<div style='border: 2px solid #2B1D67; font-family: Arial Narrow, Arial, sans-serif; text-align: center; padding: 5px 5px;'>
+            <h3>Login unsuccesfull! Try again?</h3>
+            <a href='login_page.php'>Login</a></div>";
     }
 }else{
     ?>

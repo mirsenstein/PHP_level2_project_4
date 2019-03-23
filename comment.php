@@ -1,8 +1,6 @@
 <?php include 'includes/header.php';
 
 if (!empty($_SESSION['username'])) {
-
-
 	$post_id = $_GET['id'];
 
 	$read_query = "SELECT p.post_text, p.image, u.names, p.date_time, p.likes_num FROM `posts` AS p JOIN users as u ON u.user_id=p.user_id WHERE p.post_id=" . $post_id;
@@ -46,11 +44,8 @@ if (!empty($_SESSION['username'])) {
 			if((strlen($_POST['post_text'])!=0){
 				$post_comment = mysqli_real_escape_string($con, $_POST['post_comment']);
 				$user_id 	  = $_SESSION['user_id'];
-
 				$comment_q = "INSERT INTO comments(post_id, user_id, comment) VALUES ('$post_id', '$user_id', '$post_comment')";
-
 				$result = mysqli_query($con, $comment_q);
-
 				if($result){
 					header('Location: index.php');
 				} else {
@@ -59,11 +54,10 @@ if (!empty($_SESSION['username'])) {
 			} else {
 				header("location:errors.php?msg=empty_post");
 			}
-		} else {
-				
+		} else {		
 		} ?>
 	</div>	
 <?php }else{
 	echo "You have to login to comment!";
-};
+}
 include 'includes/footer.php';

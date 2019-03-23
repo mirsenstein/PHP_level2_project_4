@@ -15,9 +15,10 @@ if (isset($_POST['submit'])){
         $query = "INSERT into `users` (username, password, names)  VALUES ('$username', '". $password ."', '$names')";
             $result = mysqli_query($con,$query);
             if($result){
-                echo "<div class='form'>
-                    <h3>You are registered successfully.</h3>
-                    <br/>Click here to <a href='login_page.php'>Login</a></div>";
+                echo "<div style='border: 2px solid #2B1D67; font-family: Arial Narrow, Arial, sans-serif; text-align: center; padding: 5px 5px;'>
+                    <h3>You are registered successfully!</h3>
+                    <br/>Click here to <a href='login_page.php'>Login</a>
+                    </div>";
             }
     } else {
         echo "Fill in all the forms, pls!";
