@@ -25,6 +25,7 @@ if (!empty($_SESSION['username'])) {
 	</div>
 	<?php 
 	if(isset($_POST['submit'])){
+		if(strlen($_POST['post_text'])!=0){
 			$post_text 	= mysqli_real_escape_string($con, $_POST['post_text']);
 			
 			$post_update_query = "UPDATE `posts` SET `post_text`='$post_text' WHERE `post_id`=$post_id";
@@ -36,6 +37,9 @@ if (!empty($_SESSION['username'])) {
 				echo mysqli_error($con);
 				echo "Please, try again later!";
 			}
-		}
+		}else{
+			header("location:errors.php?msg=empty_post_edit");
+		}	
+	}
 }
 
