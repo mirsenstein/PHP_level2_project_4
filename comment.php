@@ -41,7 +41,7 @@ if (!empty($_SESSION['username'])) {
 
 		<?php
 		if(isset($_POST['submit'])){
-			if(strlen($_POST['post_text'])!=0){
+			if(strlen($_POST['post_comment'])!=0){
 				$post_comment = mysqli_real_escape_string($con, $_POST['post_comment']);
 				$user_id 	  = $_SESSION['user_id'];
 				$comment_q = "INSERT INTO comments(post_id, user_id, comment) VALUES ('$post_id', '$user_id', '$post_comment')";
